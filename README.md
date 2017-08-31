@@ -12,4 +12,6 @@ Install the following packages before running the code.
 Go throug this link to download stop words  
 http://blog.nlpapi.co/how-to-install-nltk-corporastopwords/
 
-After doing all this , you are set to run the code in your ide. 
+After doing all this , you are set to run the code in your ide.
+
+Make sure you place the dataset "SMSSpamcollection" in the same folder/directory of your python file. 
