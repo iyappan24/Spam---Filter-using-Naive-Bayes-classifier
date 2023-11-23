@@ -6,12 +6,19 @@
 import nltk
 import string
 from nltk.corpus import stopwords
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+nltk.download('stopwords')
 #stopwords corpus is the list of words used for removing the conjuctures, prepositions etc from a sentence 
 
 
 # In[7]:
 
-import pandas as pd
+
 #importing the dataset for training. 
 messages = pd.read_csv('SMSSpamCollection2',sep='\t',names=['Label','Message'])
 
@@ -37,7 +44,7 @@ def text_process(mess):
 
 # In[10]:
 
-from sklearn.feature_extraction.text import CountVectorizer
+
 
 
 # In[11]:
@@ -55,7 +62,7 @@ messages_bow = bow_transf.transform(messages['Message'])
 
 # In[13]:
 
-from sklearn.feature_extraction.text import TfidfTransformer
+
 
 
 # In[14]:
@@ -72,13 +79,13 @@ messages_tfidf = tfid_transformer.transform(messages_bow)
 
 # In[16]:
 
-from sklearn.naive_bayes import MultinomialNB
+
 #importing the multinomialNB classifier which is usually used for textual analysis and prediction
 
 
 # In[17]:
 
-from sklearn.cross_validation import train_test_split
+
 
 
 # In[18]:
@@ -88,7 +95,7 @@ msg_train,msg_test,lab_train,lab_test = train_test_split(messages['Message'],mes
 
 # In[19]:
 
-from sklearn.pipeline import Pipeline
+
 
 
 # In[20]:
